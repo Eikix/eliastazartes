@@ -149,6 +149,11 @@ svelte@^3.37.0:
   resolved "https://registry.yarnpkg.com/svelte/-/svelte-3.42.6.tgz#45a534d76fcdb551a2f23abf2cfee648fa248d03"
   integrity sha512-lAcryr9Do2PeGtbodspX5I4kWj4yWYAa2WGpDCwzNkP3y8WZTxigMd4/TMO1rBZEOkMYGn4ZXrbAlSEGhK6q3w==
 
+three@^0.132.2:
+  version "0.132.2"
+  resolved "https://registry.yarnpkg.com/three/-/three-0.132.2.tgz#95eb1856147237c03e887cbbe56f964b6fb40b5e"
+  integrity sha512-0wcR7LxxkXMn6Gi58gEs3QvY8WpTVXA31L2VOvpjm4ZPYFRHCZC13UqynheFoS5OXDYgtBneN0dhbaNBE8iLhQ==
+
 vite@^2.5.4:
   version "2.5.10"
   resolved "https://registry.yarnpkg.com/vite/-/vite-2.5.10.tgz#c598e3b5a7e1956ffc52eb3b3420d177fc2ed2a5"
