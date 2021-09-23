@@ -3,17 +3,3 @@ canvas {
     top: 0;
     left: 0;
 }
-
-.overlap {
-    width: 100vw;
-    color: white;
-    z-index: 99;
-    width: 100%;
-    margin: 0px auto;
-    padding: 120px 0px;
-}
-
-main {
-    display: flex;
-    flex-direction: column;
-}
