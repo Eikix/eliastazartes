@@ -66,6 +66,7 @@
     line-height: 1.5em;
     max-width: 50ch;
     color: var(--color-primary, lightgrey);
+    font-family: monospace;
   }
 
   a {
@@ -125,14 +126,12 @@
     z-index: inherit;
     grid-row: 2 / 3;
     grid-column: 8 / 12;
-    font-family: monospace;
   }
 
   .grid-second-intro {
     z-index: inherit;
     grid-row: 3 / 4;
     grid-column: 2 / 7;
-    font-family: monospace;
   }
 
   .p-intro {
@@ -147,16 +146,18 @@
 
   .grid-skills {
     grid-row: 4 / 5;
-    grid-column: 2 / 7;
+    grid-column: 2 / 6;
   }
 
   .grid-projects {
     grid-row: 5/ 6;
-    grid-column: 6 / 12;
+    grid-column: 7 / 12;
   }
 
   .footer-wrapper {
     color: var(--color-secondary);
+    margin: 1em 0;
+    margin-top: 3em;
     font-size: var(--fs-f);
     z-index: 99;
     grid-column: 1/13;
