@@ -4,6 +4,7 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
 const scene = new THREE.Scene();
+scene.background = new THREE.Color(0x0a1931);
 
 const camera = new THREE.PerspectiveCamera(
     75,
@@ -28,16 +29,16 @@ const loader = new GLTFLoader();
 
 let mixer;
 let delta;
-let bg;
+let obj;
 const clock = new THREE.Clock();
 
 loader.load(
     'cloud_station/scene.gltf',
     function (model) {
         console.log(model);
-        bg = model.scene;
-        bg.position.set(1, -1, -10);
-        bg.rotation.x += 0.09;
+        obj = model.scene;
+        obj.position.set(0.5, -2, -10);
+        obj.rotation.x += 0.09;
         mixer = new THREE.AnimationMixer(model.scene);
         console.log(mixer);
         const animationAction = mixer.clipAction(model.animations[0]);
