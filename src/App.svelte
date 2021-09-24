@@ -2,6 +2,7 @@
   import Footer from './lib/Footer.svelte';
   import Header from './lib/Header.svelte';
   import Skill from './lib/Skill.svelte';
+  import ProjectCard from './lib/ProjectCard.svelte';
   const today = new Date();
   const currentYear = today.getFullYear();
   const myBday = currentYear - 1997;
@@ -46,9 +47,37 @@
     
     
     <section id="projects" class="grid-projects">
-      <p class="title-centered">
-        Some things I worked on
-      </p>
+      <div class="projects-wrapper">
+        <p class="title-centered">
+          Some things I worked on
+        </p>
+        <div class="projects-container">
+        <ProjectCard 
+          githubLink="https://github.com/Eikix/hulu-clone"
+          projectName="Hulu Clone" 
+          projectDescription="A clone of streaming platform Hulu"
+          projectPng={"hulu-clone"}
+        />
+        <ProjectCard 
+          githubLink="https://github.com/Eikix/hulu-clone"
+          projectName="Hulu Clone" 
+          projectDescription="A clone of streaming platform Hulu"
+          projectPng={"hulu-clone"}
+        />
+        <ProjectCard 
+          githubLink="https://github.com/Eikix/hulu-clone"
+          projectName="Hulu Clone" 
+          projectDescription="A clone of streaming platform Hulu"
+          projectPng={"hulu-clone"}
+        />
+        <ProjectCard 
+          githubLink="https://github.com/Eikix/hulu-clone"
+          projectName="Hulu Clone" 
+          projectDescription="A clone of streaming platform Hulu"
+          projectPng={"hulu-clone"}
+        />
+        </div>
+      </div>
     </section>
   </main>
   
@@ -67,6 +96,7 @@
     --fs-big: 1.3em;
     --fs-p: 1em;
     --fs-f: 0.5em;
+    --fs-description: 0.8em;
     --fs-modal: 0.5em;
 }
 
@@ -75,6 +105,7 @@
           --fs-big: 3em;
           --fs-p: 2.2em;
           --fs-f: 1em;
+          --fs-description: 1.3em;
           --fs-modal: 1em;
       }
   }
@@ -246,7 +277,39 @@
 
   .grid-projects {
     grid-row: 5/ 6;
-    grid-column: 2 / 6;
+    grid-column: 2 / 12;
+  }
+
+  @media (min-width: 55em) {
+    .grid-projects {
+      grid-column: 2 / 6;
+    }
+  }
+
+  .projects-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .projects-container {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10%;
+    align-items: center;
+    white-space: nowrap;
+    overflow-x: scroll;
+    max-width: 100%;
+  }
+
+  .projects-container::-webkit-scrollbar {
+    background-color: transparent;
+    height: 0.4em;
+  }
+
+  .projects-container::-webkit-scrollbar-thumb {
+    background-color: rgb(31, 0, 98);
   }
 
   .footer-wrapper {
