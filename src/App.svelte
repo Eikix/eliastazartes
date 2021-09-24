@@ -150,6 +150,7 @@ function handleWindowScrollable() {
 
   :global(body) {
       text-decoration: none;
+      background: #0a1931;
   }
 
   :global(html) {
@@ -211,7 +212,6 @@ function handleWindowScrollable() {
   .container {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    background-image: linear-gradient(45deg, rgb(45, 0, 53), rgb(19, 8, 34));
   }
 
   .header-wrapper {
@@ -224,9 +224,7 @@ function handleWindowScrollable() {
     color: var(--color-primary);
     font-size: var(--fs-big, 3em);
     letter-spacing: 3px;
-    text-shadow: 
-      0.025em 0.025em 0.005em rgb(31, 0, 98),
-
+    text-shadow: 0.025em 0.025em 0.005em rgb(31, 0, 98);
   }
 
 
@@ -315,7 +313,7 @@ function handleWindowScrollable() {
     align-items: center;
     white-space: nowrap;
     overflow-x: scroll;
-    /* overflow: hidden; */
+    overflow: hidden;
     max-width: 100%;
   }
 

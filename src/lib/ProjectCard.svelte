@@ -30,6 +30,7 @@
         background: linear-gradient(0.25turn, rgb(31, 0, 98), rgb(68, 1, 98));
         border-radius: 20%;
         padding: 5%;
+        box-shadow: 0.1em 0.1em 0.3em rgb(68, 1, 98);
     }
 
     .project-title {
@@ -62,7 +63,7 @@
     }
 
     .img-wrapper:hover{
-        transform: scale(1.6);
+        transform: scale(1.4);
     }
 
     .white {
