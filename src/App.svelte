@@ -118,6 +118,13 @@ function handleWindowScrollable() {
             projectDescription="A clone of streaming platform Hulu"
             projectPng={"hulu-clone"}
           />
+          <ProjectCard 
+            githubLink="https://github.com/Eikix/draft-simulator"
+            projectURL="https://draftkingdom.vercel.app/"
+            projectName="Draft Kingdom" 
+            projectDescription="A League of Legends, Pro play drafting simulator"
+            projectPng={"draft-kingdom"}
+          />
         </div>
       </div>
     </section>
