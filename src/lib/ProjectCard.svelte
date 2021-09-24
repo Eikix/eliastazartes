@@ -50,7 +50,7 @@
 
     .project-img {
         border-radius: 20% 20%;
-        max-width: 100px;
+        max-width: 100%;
         height: auto;
     }
     
