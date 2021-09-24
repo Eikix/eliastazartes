@@ -58,6 +58,58 @@
 
 
 <style>
+  :global(:root) {
+    font-family: Roboto, -apple-system, BlinkMacSystemFont, Oxygen, Ubuntu,
+        Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+    --color-primary: hsl(0, 0%, 95%);
+    --color-secondary: hsl(0, 0%, 88%);
+    --fs-big: 1.3em;
+    --fs-p: 1em;
+    --fs-f: 0.5em;
+    --fs-modal: 0.5em;
+}
+
+  @media (min-width: 55em) {
+      :global(:root) {
+          --fs-big: 3em;
+          --fs-p: 2.2em;
+          --fs-f: 1em;
+          --fs-modal: 1em;
+      }
+  }
+
+  :global(canvas) {
+      position: fixed;
+      top: 0;
+      left: 0;
+  }
+
+  :global(body) {
+      text-decoration: none;
+  }
+
+  :global(html) {
+      scroll-behavior: smooth;
+  }
+
+  :global(p) {
+      font-size: var(--fs-p, 1.5em);
+      line-height: 1.5em;
+      max-width: 50ch;
+      color: var(--color-primary, lightgrey);
+      font-family: monospace;
+  }
+
+  :global(a) {
+      color: inherit;
+      text-decoration: inherit;
+  }
+
+  :global(a:hover) {
+      color: rgb(202, 99, 188);
+  }
+
 
 
   main {
