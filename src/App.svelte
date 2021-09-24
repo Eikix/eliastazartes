@@ -15,7 +15,7 @@
    projectsBox.scroll({
     top: 100,
     left: coordX,
-    behavior: 'smooth',
+    behavior: 'smooth'
    });
   }
 
@@ -47,6 +47,7 @@ let wheelEvent = 'onwheel' in document.createElement('div') ? 'wheel' : 'mousewh
 function handlePreventWindowScroll() {
   window.addEventListener('DOMMouseScroll', preventDefault, false); // older FF
   window.addEventListener(wheelEvent, preventDefault, wheelOpt); // modern desktop
+  window.addEventListener('touchmove', preventDefault, wheelOpt); // mobile
   window.addEventListener('keydown', preventDefaultForScrollKeys, false);
 }
 
@@ -54,6 +55,7 @@ function handlePreventWindowScroll() {
 function handleWindowScrollable() {
   window.removeEventListener('DOMMouseScroll', preventDefault, false);
   window.removeEventListener(wheelEvent, preventDefault, wheelOpt); 
+  window.removeEventListener('touchmove', preventDefault, wheelOpt);
   window.removeEventListener('keydown', preventDefaultForScrollKeys, false);
 }
 </script>
@@ -313,7 +315,7 @@ function handleWindowScrollable() {
     align-items: center;
     white-space: nowrap;
     overflow-x: scroll;
-    overflow: hidden;
+    /* overflow: hidden; */
     max-width: 100%;
   }
 

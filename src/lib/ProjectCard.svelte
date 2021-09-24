@@ -5,6 +5,7 @@
     export let projectPng;
     export let projectURL;
     // Note that projectPng is a slug for the name of the project. Example : Hulu Clone project -> hulu-clone
+    const projectId = projectPng;
     const png = `projects-png/${projectPng}.png`;
 
 </script>
@@ -49,7 +50,7 @@
 
     .project-img {
         border-radius: 20% 20%;
-        max-width: 100%;
+        max-width: 100px;
         height: auto;
     }
     
