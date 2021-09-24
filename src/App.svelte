@@ -33,9 +33,9 @@
         <p class="title-centered">Some stuff I'm good at</p>
         <div class="skills-container">
           <Skill fileName={'javascript'} name={'Javascript'} modal={'Frontend development, NodeJS & Express APIs'}/>
-          <Skill fileName={'react'} name={'ReactJS'} modal={'React and Next web apps'}/>
+          <Skill fileName={'react'} name={'ReactJS'} modal={'ReactJS and NextJS SPAs and websites'}/>
           <Skill fileName={'mongodb'} name={'MongoDB'} modal={'Database architecture and maintenance'}/>
-          <Skill fileName={'ethereum'} name={'Blockchain'} modal={'DApp development in Solidity'}/>
+          <Skill fileName={'ethereum'} name={'Blockchain'} modal={'Ethereum DApp development in Solidity'}/>
           <Skill fileName={'svelte'} name={'Svelte'} modal={'Beautiful and blazing fast web apps'}/>
           <Skill fileName={'python'} name={'Python'} modal={'Data analysis and Machine Learning proficiency'}/>
           <Skill fileName={'socket-io'} name={'Socket.io'} modal={'Websocket reliant apps, such as online games'}/>
