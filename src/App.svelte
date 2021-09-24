@@ -320,7 +320,6 @@ function handleWindowScrollable() {
     align-items: center;
     white-space: nowrap;
     overflow-x: scroll;
-    overflow: hidden;
     max-width: 100%;
   }
 
@@ -354,12 +353,10 @@ function handleWindowScrollable() {
         grid-row: 5 / 6;
         grid-column: 2 / 6;
     }
-  }
 
-  /* Prevent from scrolling body while hovering projects */
- 
-  .stop-scrolling {
-      height: 100vh;
-      overflow: hidden;
+  .projects-container {
+    overflow: hidden;
   }
+}
+
 </style>
