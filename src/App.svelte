@@ -30,10 +30,10 @@
 
     <section id="skills" class="grid-skills relative">
       <div class="skills-wrapper">
-        <p class="title-centered">Some stuff I'm good at</p>
+        <p class="title-centered">Some things I'm good at</p>
         <div class="skills-container">
           <Skill fileName={'javascript'} name={'Javascript'} modal={'Frontend development, NodeJS & Express APIs'}/>
-          <Skill fileName={'react'} name={'ReactJS'} modal={'ReactJS and NextJS SPAs and websites'}/>
+          <Skill fileName={'react'} name={'ReactJS'} modal={'ReactJS, NextJS and React Native SPAs and native mobile apps'}/>
           <Skill fileName={'mongodb'} name={'MongoDB'} modal={'Database architecture and maintenance'}/>
           <Skill fileName={'ethereum'} name={'Blockchain'} modal={'Ethereum DApp development in Solidity'}/>
           <Skill fileName={'svelte'} name={'Svelte'} modal={'Beautiful and blazing fast web apps'}/>
@@ -46,8 +46,8 @@
     
     
     <section id="projects" class="grid-projects">
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. A laborum, praesentium perferendis perspiciatis ipsa laboriosam quibusdam in iste debitis nihil nostrum enim qui, eaque, eius ratione dolores. Ea, rem tempora.
+      <p class="title-centered">
+        Some things I worked on
       </p>
     </section>
   </main>
