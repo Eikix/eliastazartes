@@ -9,15 +9,6 @@
 </header>
 
 <style>
-    a {
-        color: inherit;
-        text-decoration: inherit;
-    }
-
-    a:hover {
-        color: rgb(202, 99, 188);
-    }
-
     .nav-container {
         display: flex;
         justify-content: center;

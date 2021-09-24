@@ -6,6 +6,58 @@
   const today = new Date();
   const currentYear = today.getFullYear();
   const myBday = currentYear - 1997;
+
+  let projectsBox;
+  let coordX = 0;
+
+  function handleScroll(event) {
+   coordX += event.deltaY;
+   projectsBox.scroll({
+    top: 100,
+    left: coordX,
+    behavior: 'smooth'
+   });
+  }
+
+const keys = {37: 1, 38: 1, 39: 1, 40: 1};
+
+function preventDefault(e) {
+  e.preventDefault();
+}
+
+function preventDefaultForScrollKeys(e) {
+  if (keys[e.keyCode]) {
+    preventDefault(e);
+    return false;
+  }
+}
+
+// modern Chrome requires { passive: false } when adding event
+let supportsPassive = false;
+try {
+  window.addEventListener("test", null, Object.defineProperty({}, 'passive', {
+    get: function () { supportsPassive = true; } 
+  }));
+} catch(e) {}
+
+let wheelOpt = supportsPassive ? { passive: false } : false;
+let wheelEvent = 'onwheel' in document.createElement('div') ? 'wheel' : 'mousewheel';
+
+// call this to Disable
+function handlePreventWindowScroll() {
+  window.addEventListener('DOMMouseScroll', preventDefault, false); // older FF
+  window.addEventListener(wheelEvent, preventDefault, wheelOpt); // modern desktop
+  window.addEventListener('touchmove', preventDefault, wheelOpt); // mobile
+  window.addEventListener('keydown', preventDefaultForScrollKeys, false);
+}
+
+// call this to Enable
+function handleWindowScrollable() {
+  window.removeEventListener('DOMMouseScroll', preventDefault, false);
+  window.removeEventListener(wheelEvent, preventDefault, wheelOpt); 
+  window.removeEventListener('touchmove', preventDefault, wheelOpt);
+  window.removeEventListener('keydown', preventDefaultForScrollKeys, false);
+}
 </script>
 
 <svelte:head>
@@ -47,35 +99,25 @@
     
     
     <section id="projects" class="grid-projects">
-      <div class="projects-wrapper">
+      <div class="projects-wrapper" on:mouseenter={handlePreventWindowScroll} on:mouseleave={handleWindowScrollable}>
         <p class="title-centered">
           Some things I worked on
         </p>
-        <div class="projects-container">
-        <ProjectCard 
-          githubLink="https://github.com/Eikix/hulu-clone"
-          projectName="Hulu Clone" 
-          projectDescription="A clone of streaming platform Hulu"
-          projectPng={"hulu-clone"}
-        />
-        <ProjectCard 
-          githubLink="https://github.com/Eikix/hulu-clone"
-          projectName="Hulu Clone" 
-          projectDescription="A clone of streaming platform Hulu"
-          projectPng={"hulu-clone"}
-        />
-        <ProjectCard 
-          githubLink="https://github.com/Eikix/hulu-clone"
-          projectName="Hulu Clone" 
-          projectDescription="A clone of streaming platform Hulu"
-          projectPng={"hulu-clone"}
-        />
-        <ProjectCard 
-          githubLink="https://github.com/Eikix/hulu-clone"
-          projectName="Hulu Clone" 
-          projectDescription="A clone of streaming platform Hulu"
-          projectPng={"hulu-clone"}
-        />
+        <div class="projects-container" on:mousewheel={handleScroll} bind:this={projectsBox}>
+          <ProjectCard 
+            githubLink="https://github.com/Eikix/chess-frontend"
+            projectURL="https://eikichess-eikix.vercel.app/"
+            projectName="Online Chess" 
+            projectDescription="An online chess game"
+            projectPng={"eiki-chess"}
+          />
+          <ProjectCard 
+            githubLink="https://github.com/Eikix/hulu-clone"
+            projectURL="https://hulu-clone-tutorial.vercel.app/"
+            projectName="Hulu Clone" 
+            projectDescription="A clone of streaming platform Hulu"
+            projectPng={"hulu-clone"}
+          />
         </div>
       </div>
     </section>
@@ -100,16 +142,6 @@
     --fs-modal: 0.5em;
 }
 
-  @media (min-width: 55em) {
-      :global(:root) {
-          --fs-big: 3em;
-          --fs-p: 2.2em;
-          --fs-f: 1em;
-          --fs-description: 1.3em;
-          --fs-modal: 1em;
-      }
-  }
-
   :global(canvas) {
       position: fixed;
       top: 0;
@@ -129,7 +161,6 @@
       line-height: 1.5em;
       max-width: 50ch;
       color: var(--color-primary, lightgrey);
-      font-family: monospace;
   }
 
   :global(a) {
@@ -138,7 +169,7 @@
   }
 
   :global(a:hover) {
-      color: rgb(202, 99, 188);
+      color: pink;
   }
 
 
@@ -195,7 +226,6 @@
     letter-spacing: 3px;
     text-shadow: 
       0.025em 0.025em 0.005em rgb(31, 0, 98),
-      0.05em  0.05em 0.005em rgb(42, 4, 59);
 
   }
 
@@ -223,7 +253,6 @@
   .p-intro {
     text-shadow: 
       0.025em 0.025em 0.005em rgb(31, 0, 98),
-      0.05em  0.05em 0.005em rgb(68, 1, 98);
   }
 
   .a-cta {
@@ -234,15 +263,6 @@
     grid-row: 4 / 5;
     grid-column: 2 / 12;
   }
-
-  @media (min-width:55em) {
-    .grid-skills {
-        grid-row: 4 / 5;
-        grid-column: 8 / 12;
-      }
-  }
-  
-
 
   .title-centered {
     text-align: center;
@@ -276,14 +296,8 @@
   }
 
   .grid-projects {
-    grid-row: 5/ 6;
+    grid-row: 5 / 6;
     grid-column: 2 / 12;
-  }
-
-  @media (min-width: 55em) {
-    .grid-projects {
-      grid-column: 2 / 6;
-    }
   }
 
   .projects-wrapper {
@@ -295,22 +309,17 @@
 
   .projects-container {
     display: flex;
+    z-index:99;
     justify-content: flex-start;
     gap: 10%;
     align-items: center;
     white-space: nowrap;
     overflow-x: scroll;
+    /* overflow: hidden; */
     max-width: 100%;
   }
 
-  .projects-container::-webkit-scrollbar {
-    background-color: transparent;
-    height: 0.4em;
-  }
 
-  .projects-container::-webkit-scrollbar-thumb {
-    background-color: rgb(31, 0, 98);
-  }
 
   .footer-wrapper {
     color: var(--color-secondary);
@@ -321,5 +330,31 @@
     grid-column: 1/13;
   }
 
+  
+  @media (min-width: 55em) {
+      :global(:root) {
+          --fs-big: 3em;
+          --fs-p: 2.2em;
+          --fs-f: 1em;
+          --fs-description: 1.3em;
+          --fs-modal: 1em;
+      }
+
+      .grid-skills {
+        grid-row: 4 / 5;
+        grid-column: 8 / 12;
+      }
+
+      .grid-projects {
+        grid-row: 5 / 6;
+        grid-column: 2 / 6;
+    }
+  }
+
+  /* Prevent from scrolling body while hovering projects */
  
+  .stop-scrolling {
+      height: 100vh;
+      overflow: hidden;
+  }
 </style>

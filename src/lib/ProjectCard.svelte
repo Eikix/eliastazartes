@@ -3,6 +3,7 @@
     export let projectName;
     export let projectDescription;
     export let projectPng;
+    export let projectURL;
     // Note that projectPng is a slug for the name of the project. Example : Hulu Clone project -> hulu-clone
     const projectId = projectPng;
     const png = `projects-png/${projectPng}.png`;
@@ -10,10 +11,12 @@
 </script>
 
 <div class="project-display">
-    <img class="project-img" src={png} alt={projectName}>
-    <p class="project-title">{projectName}</p>
+    <div class="img-wrapper"><a href={projectURL}><img class="project-img" src={png} alt={projectName}></a></div>
+    <a href={projectURL}><p class="project-title">{projectName}</p></a>
     <p class="project-description">{projectDescription}</p>
-    <a href={githubLink}><i class="fab fa-github white"></i></a>
+    <div class="links-cta">
+        <a href={githubLink}><i class="fab fa-github white"></i></a> <a href={projectURL}><i class="fas fa-eye white"></i></a>
+    </div>
 </div>
 
 
@@ -23,26 +26,57 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        max-width: 100%;
+        min-width: 50%;
+        background: linear-gradient(0.25turn, rgb(31, 0, 98), rgb(68, 1, 98));
+        border-radius: 20%;
+        padding: 5%;
     }
 
     .project-title {
         line-height: 1;
     }
+    
+    .project-title:hover{
+        color: pink;
+    }
 
     .project-description {
         max-width: 100%;
+        white-space: normal;
+        text-align: center;
         font-size: var(--fs-description, 1em);
         line-height: 1;
     }
 
     .project-img {
         border-radius: 20% 20%;
-        width: 50%;
+        max-width: 100px;
         height: auto;
+    }
+    
+    .img-wrapper {
+        width: 50%;
+        text-align: center;
+        transform: scale(1);
+        transition: transform 200ms;
+    }
+
+    .img-wrapper:hover{
+        transform: scale(1.6);
     }
 
     .white {
         color: white;
+    }
+
+    .white:hover {
+        color: pink;
+    }
+
+    .links-cta {
+        display: flex;
+        min-width: 30%;
+        justify-content: space-around;
+        align-items: center;
     }
 </style>
