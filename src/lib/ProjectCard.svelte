@@ -11,11 +11,11 @@
 </script>
 
 <div class="project-display">
-    <div class="img-wrapper"><a href={projectURL}><img class="project-img" src={png} alt={projectName}></a></div>
-    <a href={projectURL}><p class="project-title">{projectName}</p></a>
+    <div class="img-wrapper"><a href={projectURL} target="_blank"><img class="project-img" src={png} alt={projectName}></a></div>
+    <a href={projectURL} target="_blank"><p class="project-title">{projectName}</p></a>
     <p class="project-description">{projectDescription}</p>
     <div class="links-cta">
-        <a href={githubLink}><i class="fab fa-github white"></i></a> <a href={projectURL}><i class="fas fa-eye white"></i></a>
+        <a href={githubLink} target="_blank"><i class="fab fa-github white"></i></a> <a href={projectURL} target="_blank"><i class="fas fa-eye white"></i></a>
     </div>
 </div>
 

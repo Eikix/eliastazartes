@@ -125,6 +125,13 @@ function handleWindowScrollable() {
             projectDescription="A League of Legends, Pro play drafting simulator"
             projectPng={"draft-kingdom"}
           />
+          <ProjectCard
+            githubLink="https://github.com/Eikix/rorschach-app"
+            projectURL="https://rorschach-app.vercel.app/"
+            projectName="Rorschach Test (French)"
+            projectDescription="A Rorscach Test App designed for therapists"
+            projectPng={"rorschach"}
+          />
         </div>
       </div>
     </section>
