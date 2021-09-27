@@ -68,7 +68,7 @@ function handleWindowScrollable() {
   <div class="header-wrapper"><Header/></div>
   <main class="z-ind">
     <section class="grid-landing">
-      <h2 class="hi grid-hi">Hi, I'm Elias, I build things.</h2>
+      <h2 class="hi grid-hi">Hi, I'm Elias, freelance developer.</h2>
       <div class="grid-intro">
         <p class="p-intro">
           I'm a {myBday} year-old freelancer based in Paris. I mainly do fullstack web development. <a href="#skills" class="a-cta"><i class="fas fa-hammer"></i></a>
@@ -189,6 +189,7 @@ function handleWindowScrollable() {
   }
 
   section {
+    margin: 0 auto;
     margin-bottom: min(6em, 20%);
   }
   
@@ -274,14 +275,13 @@ function handleWindowScrollable() {
   }
 
   .skills-container {
-    display: flex;
-    gap: 1em;
-    padding: 2em;
-    z-index: 99;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2em;
+  }
+  
+  .skills-wrapper {
+    padding: 2em 4em;
   }
 
   .skills-wrapper::before {
@@ -353,6 +353,17 @@ function handleWindowScrollable() {
         grid-row: 5 / 6;
         grid-column: 2 / 6;
     }
+
+    .skills-container {
+    display: flex;
+    gap: 1em;
+    padding: 2em;
+    z-index: 99;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+  }
 
   .projects-container {
     overflow: hidden;

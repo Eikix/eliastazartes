@@ -92,8 +92,14 @@
     }
 
     .clicked {
-        transform: scale(2);
+        transform: scale(1.3);
     }
+    @media(min-width: 55em) {
+        .clicked {
+            transform: scale(2);
+        }
+    }
+   
 
 
 
