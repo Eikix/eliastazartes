@@ -132,6 +132,13 @@ function handleWindowScrollable() {
             projectDescription="A Rorscach Test App designed for therapists"
             projectPng={"rorschach"}
           />
+          <ProjectCard
+            githubLink="https://github.com/Eikix/mockup-to-website"
+            projectURL="https://eikix.github.io/mockup-to-website/"
+            projectName="Mockup to Website"
+            projectDescription="Openclassroom Project: code a HTML/CSS-only website from mockup images"
+            projectPng={"mockup"}
+          />
         </div>
       </div>
     </section>
