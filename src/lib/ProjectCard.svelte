@@ -12,10 +12,10 @@
 
 <div class="project-display">
     <div class="img-wrapper"><a href={projectURL} target="_blank"><img class="project-img" src={png} alt={projectName}></a></div>
-    <a href={projectURL} target="_blank"><p class="project-title">{projectName}</p></a>
+    <a href={projectURL} target="_blank" rel=”noopener”><p class="project-title">{projectName}</p></a>
     <p class="project-description">{projectDescription}</p>
     <div class="links-cta">
-        <a href={githubLink} target="_blank"><i class="fab fa-github white"></i></a> <a href={projectURL} target="_blank"><i class="fas fa-eye white"></i></a>
+        <a href={githubLink} target="_blank" rel=”noopener”><i class="fab fa-github white"></i></a> <a href={projectURL} target="_blank" rel=”noopener”><i class="fas fa-eye white"></i></a>
     </div>
 </div>
 
@@ -26,7 +26,7 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        min-width: 50%;
+        min-width: max(15em, 80%);
         background: linear-gradient(0.25turn, rgb(31, 0, 98), rgb(68, 1, 98));
         border-radius: 20%;
         padding: 5%;
@@ -46,7 +46,7 @@
         white-space: normal;
         text-align: center;
         font-size: var(--fs-description, 1em);
-        line-height: 1;
+        line-height: 1.5;
     }
 
     .project-img {
@@ -79,5 +79,11 @@
         min-width: 30%;
         justify-content: space-around;
         align-items: center;
+    }
+
+    @media (min-width: 70em) {
+        .links-cta {
+            font-size: 2em;
+        }
     }
 </style>

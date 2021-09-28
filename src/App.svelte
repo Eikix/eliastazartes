@@ -132,7 +132,7 @@ function handleWindowScrollable() {
           <ProjectCard
             githubLink="https://github.com/Eikix/rorschach-app"
             projectURL="https://rorschach-app.vercel.app/"
-            projectName="Rorschach Test (French)"
+            projectName="Rorschach Test"
             projectDescription="A Rorscach Test App designed for therapists"
             projectPng={"rorschach"}
           />
@@ -355,7 +355,7 @@ function handleWindowScrollable() {
   }
 
   
-  @media (min-width: 55em) {
+  @media (min-width: 70em) {
       :global(:root) {
           --fs-big: 3em;
           --fs-p: 2.2em;

@@ -4,7 +4,7 @@
     <nav class="nav-container">
         <a href="#skills"><i class="fas fa-dumbbell"></i></a>
         <a href="#projects"><i class="fas fa-wrench"></i></a>
-        <a href="https://github.com/Eikix" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://github.com/Eikix" target="_blank" rel=”noopener”><i class="fab fa-github"></i></a>
     </nav>
 </header>
 
