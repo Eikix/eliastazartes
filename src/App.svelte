@@ -86,13 +86,14 @@ function handleWindowScrollable() {
         <p class="title-centered">Some things I'm good at</p>
         <div class="skills-container">
           <Skill fileName={'javascript'} name={'Javascript'} modal={'Frontend development, NodeJS & Express APIs'}/>
-          <Skill fileName={'react'} name={'ReactJS'} modal={'ReactJS, NextJS and React Native SPAs and native mobile apps'}/>
+          <Skill fileName={'react'} name={'ReactJS'} modal={'ReactJS, NextJS and React Native development'}/>
           <Skill fileName={'mongodb'} name={'MongoDB'} modal={'Database architecture and maintenance'}/>
           <Skill fileName={'ethereum'} name={'Blockchain'} modal={'Ethereum DApp development in Solidity'}/>
           <Skill fileName={'svelte'} name={'Svelte'} modal={'Beautiful and blazing fast web apps'}/>
           <Skill fileName={'python'} name={'Python'} modal={'Data analysis and Machine Learning proficiency'}/>
           <Skill fileName={'socket-io'} name={'Socket.io'} modal={'Websocket reliant apps, such as online games'}/>
-          <Skill fileName={'webgl'} name={'ThreeJS'} modal={'WebGL visuals, e.g. this 3D animated background.'}/>
+          <Skill fileName={'webgl'} name={'ThreeJS'} modal={'WebGL visuals, e.g. this 3D animated background'}/>
+          <Skill fileName={'tailwindcss'} name={'TailwindCSS'} modal={'Utility-first CSS framework proficiency'} />
         </div>
       </div>
     </section>
