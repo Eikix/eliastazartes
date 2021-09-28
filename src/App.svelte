@@ -86,7 +86,8 @@ function handleWindowScrollable() {
         <p class="title-centered">Some things I'm good at</p>
         <div class="skills-container">
           <Skill fileName={'javascript'} name={'Javascript'} modal={'Frontend development, NodeJS & Express APIs'}/>
-          <Skill fileName={'react'} name={'ReactJS'} modal={'ReactJS, NextJS and React Native development'}/>
+          <Skill fileName={'react'} name={'ReactJS'} modal={'ReactJS and React Native development'}/>
+          <Skill fileName={'node'} name={'NodeJS'} modal={'NodeJS & Express backend architecture'} />
           <Skill fileName={'mongodb'} name={'MongoDB'} modal={'Database architecture and maintenance'}/>
           <Skill fileName={'ethereum'} name={'Blockchain'} modal={'Ethereum DApp development in Solidity'}/>
           <Skill fileName={'svelte'} name={'Svelte'} modal={'Beautiful and blazing fast web apps'}/>
@@ -94,6 +95,8 @@ function handleWindowScrollable() {
           <Skill fileName={'socket-io'} name={'Socket.io'} modal={'Websocket reliant apps, such as online games'}/>
           <Skill fileName={'webgl'} name={'ThreeJS'} modal={'WebGL visuals, e.g. this 3D animated background'}/>
           <Skill fileName={'tailwindcss'} name={'TailwindCSS'} modal={'Utility-first CSS framework proficiency'} />
+          <Skill fileName={'firebase'} name={'Firebase'} modal={'Implementing backend with Firebase Auth and Firestore'}/>
+          <Skill fileName={'vercel'} name={'NextJS'} modal={'Server-side rendering apps with NextJS'}/>
         </div>
       </div>
     </section>
@@ -102,7 +105,7 @@ function handleWindowScrollable() {
     <section id="projects" class="grid-projects">
       <div class="projects-wrapper" on:mouseenter={handlePreventWindowScroll} on:mouseleave={handleWindowScrollable}>
         <p class="title-centered">
-          Some things I worked on
+          Projects I worked on
         </p>
         <div class="projects-container" on:mousewheel={handleScroll} bind:this={projectsBox}>
           <ProjectCard 
@@ -137,7 +140,7 @@ function handleWindowScrollable() {
             githubLink="https://github.com/Eikix/mockup-to-website"
             projectURL="https://eikix.github.io/mockup-to-website/"
             projectName="Mockup to Website"
-            projectDescription="Openclassroom Project: code a HTML/CSS-only website from mockup images"
+            projectDescription="Build a HTML/CSS-only page using only mockups"
             projectPng={"mockup"}
           />
         </div>
@@ -318,6 +321,7 @@ function handleWindowScrollable() {
   .grid-projects {
     grid-row: 5 / 6;
     grid-column: 2 / 12;
+    max-width: 100%;
   }
 
   .projects-wrapper {
@@ -325,6 +329,7 @@ function handleWindowScrollable() {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+
   }
 
   .projects-container {
