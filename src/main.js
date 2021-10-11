@@ -1,7 +1,6 @@
 import App from './App.svelte';
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
 const scene = new THREE.Scene();
 scene.background = new THREE.Color(0x0a1931);
@@ -20,7 +19,7 @@ const renderer = new THREE.WebGLRenderer({
 renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setSize(window.innerWidth, window.innerHeight);
 camera.position.setZ(7);
-camera.position.setX(0);
+camera.position.setX(-5);
 camera.position.setY(-0.5);
 
 renderer.render(scene, camera);
@@ -37,8 +36,9 @@ loader.load(
     function (model) {
         console.log(model);
         obj = model.scene;
-        obj.position.set(0.5, -2, -10);
-        obj.rotation.x += 0.09;
+        obj.position.set(-65, 40, -75);
+        obj.rotation.x += 0.5;
+        obj.rotation.y += 0.2;
         mixer = new THREE.AnimationMixer(model.scene);
         console.log(mixer);
         const animationAction = mixer.clipAction(model.animations[0]);
@@ -62,8 +62,7 @@ function moveCamera() {
     camera.position.x = t * -0.0002;
     camera.rotation.y = t * -0.0002;
     if (obj) {
-        obj.rotation.y += -Math.random() / 100;
-        obj.rotation.z += -Math.random() / 100;
+        obj.rotation.y += Math.random() / 50;
     }
 }
 document.body.onscroll = moveCamera;
