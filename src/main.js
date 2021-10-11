@@ -61,6 +61,10 @@ function moveCamera() {
     camera.position.z = t * -0.01;
     camera.position.x = t * -0.0002;
     camera.rotation.y = t * -0.0002;
+    if (obj) {
+        obj.rotation.y += -Math.random() / 100;
+        obj.rotation.z += -Math.random() / 100;
+    }
 }
 document.body.onscroll = moveCamera;
 moveCamera();
