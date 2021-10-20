@@ -1,97 +1,100 @@
 import App from './App.svelte';
-import * as THREE from 'three';
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 
-const scene = new THREE.Scene();
-scene.background = new THREE.Color(0x0a1931);
+// Commenting ThreeJS out for now.
 
-const camera = new THREE.PerspectiveCamera(
-    75,
-    window.innerWidth / window.innerHeight,
-    0.1,
-    1000
-);
+// import * as THREE from 'three';
+// import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 
-const renderer = new THREE.WebGLRenderer({
-    canvas: document.querySelector('#bg'),
-});
+// const scene = new THREE.Scene();
+// scene.background = new THREE.Color(0x0a1931);
 
-renderer.setPixelRatio(window.devicePixelRatio);
-renderer.setSize(window.innerWidth, window.innerHeight);
-camera.position.setZ(7);
-camera.position.setX(-5);
-camera.position.setY(-0.5);
+// const camera = new THREE.PerspectiveCamera(
+//     75,
+//     window.innerWidth / window.innerHeight,
+//     0.1,
+//     1000
+// );
 
-renderer.render(scene, camera);
+// const renderer = new THREE.WebGLRenderer({
+//     canvas: document.querySelector('#bg'),
+// });
 
-const loader = new GLTFLoader();
+// renderer.setPixelRatio(window.devicePixelRatio);
+// renderer.setSize(window.innerWidth, window.innerHeight);
+// camera.position.setZ(7);
+// camera.position.setX(-5);
+// camera.position.setY(-0.5);
 
-let mixer;
-let delta;
-let obj;
-const clock = new THREE.Clock();
+// renderer.render(scene, camera);
 
-loader.load(
-    'cloud_station/scene.gltf',
-    function (model) {
-        console.log(model);
-        obj = model.scene;
-        obj.position.set(-65, 40, -75);
-        obj.rotation.x += 0.5;
-        obj.rotation.y += 0.2;
-        mixer = new THREE.AnimationMixer(model.scene);
-        console.log(mixer);
-        const animationAction = mixer.clipAction(model.animations[0]);
-        animationAction.play();
-        scene.add(model.scene);
-    },
-    undefined,
-    function (error) {
-        console.error(error);
-    }
-);
+// const loader = new GLTFLoader();
 
-const light = new THREE.AmbientLight(0xffffff);
-scene.add(light);
+// let mixer;
+// let delta;
+// let obj;
+// const clock = new THREE.Clock();
 
-// const controls = new OrbitControls(camera, renderer.domElement);
+// loader.load(
+//     'cloud_station/scene.gltf',
+//     function (model) {
+//         console.log(model);
+//         obj = model.scene;
+//         obj.position.set(-65, 40, -75);
+//         obj.rotation.x += 0.5;
+//         obj.rotation.y += 0.2;
+//         mixer = new THREE.AnimationMixer(model.scene);
+//         console.log(mixer);
+//         const animationAction = mixer.clipAction(model.animations[0]);
+//         animationAction.play();
+//         scene.add(model.scene);
+//     },
+//     undefined,
+//     function (error) {
+//         console.error(error);
+//     }
+// );
 
-function moveCamera() {
-    const t = document.body.getBoundingClientRect().top;
-    camera.position.z = t * -0.01;
-    camera.position.x = t * -0.0002;
-    camera.rotation.y = t * -0.0002;
-    if (obj) {
-        obj.rotation.y += Math.random() / 50;
-    }
-}
-document.body.onscroll = moveCamera;
-moveCamera();
+// const light = new THREE.AmbientLight(0xffffff);
+// scene.add(light);
 
-// Resize
+// // const controls = new OrbitControls(camera, renderer.domElement);
 
-// window.addEventListener('resize', onWindowResize, false);
+// function moveCamera() {
+//     const t = document.body.getBoundingClientRect().top;
+//     camera.position.z = t * -0.01;
+//     camera.position.x = t * -0.0002;
+//     camera.rotation.y = t * -0.0002;
+//     if (obj) {
+//         obj.rotation.y += Math.random() / 50;
+//     }
+// }
+// document.body.onscroll = moveCamera;
+// moveCamera();
 
-// function onWindowResize() {
-//     camera.aspect = window.innerWidth / window.innerHeight;
-//     camera.updateProjectionMatrix();
+// // Resize
 
-//     renderer.setSize(window.innerWidth, window.innerHeight);
+// // window.addEventListener('resize', onWindowResize, false);
+
+// // function onWindowResize() {
+// //     camera.aspect = window.innerWidth / window.innerHeight;
+// //     camera.updateProjectionMatrix();
+
+// //     renderer.setSize(window.innerWidth, window.innerHeight);
+// // }
+
+// // Animate
+
+// function animate() {
+//     requestAnimationFrame(animate);
+
+//     delta = clock.getDelta();
+
+//     if (mixer) mixer.update(delta);
+//     renderer.render(scene, camera);
+//     // controls.update();
 // }
 
-// Animate
-
-function animate() {
-    requestAnimationFrame(animate);
-
-    delta = clock.getDelta();
-
-    if (mixer) mixer.update(delta);
-    renderer.render(scene, camera);
-    // controls.update();
-}
-
-animate();
+// animate();
 
 // Svelte
 

@@ -85,7 +85,7 @@
         z-index: 99;
         padding: 0.9em;
         border-radius: min(3em, 20%);
-        background: linear-gradient(0.25turn, rgb(31, 0, 98), rgb(68, 1, 98));
+        background: var(--dark-purple-gradient);
         font-size: var(--fs-modal, 1em);
         transform: scale(1);
         transition: transform 200ms;

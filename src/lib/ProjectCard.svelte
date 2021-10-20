@@ -27,10 +27,10 @@
         align-items: center;
         justify-content: center;
         min-width: max(15em, 80%);
-        background: linear-gradient(0.25turn, rgb(31, 0, 98), rgb(68, 1, 98));
+        background: linear-gradient(0.4turn, rgb(32, 4, 44), rgb(29, 17, 34) , rgb(44, 7, 63));
         border-radius: 20%;
         padding: 5%;
-        box-shadow: 0.1em 0.1em 0.3em rgb(68, 1, 98);
+        box-shadow: 0.1em 0.1em 0.3em rgb(32, 4, 44);
     }
 
     .project-title {

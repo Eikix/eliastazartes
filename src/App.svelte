@@ -68,7 +68,8 @@ function handleWindowScrollable() {
   <div class="header-wrapper"><Header/></div>
   <main class="z-ind">
     <section class="grid-landing">
-      <h2 class="hi grid-hi">Hi, I'm Elias, freelance developer.</h2>
+      <h2 class="hi grid-hi">Hi, I'm <span class="elias">Elias</span>,</h2>
+      <h2 class="hi grid-hi-2">I do freelance programming.</h2>
       <div class="grid-intro">
         <p class="p-intro">
           I'm a {myBday} year-old freelancer based in Paris. I mainly do fullstack web development. <a href="#skills" class="a-cta"><i class="fas fa-hammer"></i></a>
@@ -165,17 +166,20 @@ function handleWindowScrollable() {
     --fs-f: 0.5em;
     --fs-description: 0.8em;
     --fs-modal: 0.5em;
-}
 
-  :global(canvas) {
+    --yellow-gradient: linear-gradient(0.1turn, rgb(59, 59, 59), rgb(126, 134, 68) );
+    --dark-purple-gradient: linear-gradient(0.4turn, rgb(23, 3, 32), rgb(29, 17, 34) , rgb(33, 5, 47));
+  }
+
+  /* :global(canvas) {
       position: fixed;
       top: 0;
       left: 0;
-  }
+  } */
 
   :global(body) {
       text-decoration: none;
-      background: #0a1931;
+      background: var(--dark-purple-gradient);
   }
 
   :global(html) {
@@ -219,6 +223,10 @@ function handleWindowScrollable() {
     position: relative;
   }
 
+  .elias {
+    color: rgb(226, 215, 115);
+  }
+
   .grid-landing {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
@@ -257,20 +265,28 @@ function handleWindowScrollable() {
   .grid-hi {
     z-index: 99;
     margin: min(3em, 20%) 0;
-    text-align: center;
+    margin-bottom: 0;
+    text-align: left;
     grid-row: 1 / 2;
+    grid-column: 2 / 11;
+  }
+
+  .grid-hi-2 {
+    z-index: 99;
+    text-align: left;
+    grid-row: 2 / 3;
     grid-column: 2 / 11;
   }
 
   .grid-intro {
     z-index: inherit;
-    grid-row: 2 / 3;
+    grid-row: 3 / 4;
     grid-column: 8 / 12;
   }
 
   .grid-second-intro {
     z-index: inherit;
-    grid-row: 3 / 4;
+    grid-row: 4 / 5;
     grid-column: 2 / 6;
   }
 
@@ -284,7 +300,7 @@ function handleWindowScrollable() {
   }
 
   .grid-skills {
-    grid-row: 4 / 5;
+    grid-row: 5 / 6;
     grid-column: 2 / 12;
   }
 
@@ -307,7 +323,7 @@ function handleWindowScrollable() {
     position: absolute;
     inset: 0;
     z-index: -1;
-    background: linear-gradient(0.25turn, rgb(31, 0, 98), rgb(68, 1, 98));
+    background: var(--yellow-gradient);
     border-radius: 2em 2em;
     transform: scale(0);
     transition: transform 300ms ease-in-out;
@@ -319,7 +335,7 @@ function handleWindowScrollable() {
   }
 
   .grid-projects {
-    grid-row: 5 / 6;
+    grid-row: 6 / 7;
     grid-column: 2 / 12;
     max-width: 100%;
   }
@@ -355,7 +371,7 @@ function handleWindowScrollable() {
   }
 
   
-  @media (min-width: 70em) {
+  @media (min-width: 80em) {
       :global(:root) {
           --fs-big: 3em;
           --fs-p: 2.2em;
@@ -365,12 +381,12 @@ function handleWindowScrollable() {
       }
 
       .grid-skills {
-        grid-row: 4 / 5;
+        grid-row: 5 / 6;
         grid-column: 8 / 12;
       }
 
       .grid-projects {
-        grid-row: 5 / 6;
+        grid-row: 6 / 7;
         grid-column: 2 / 6;
     }
 
