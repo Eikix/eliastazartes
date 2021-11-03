@@ -81,7 +81,7 @@ function handleWindowScrollable() {
         </details>
         <details class="inline-details" open={details2}>
           <summary class="intro-summary" on:mouseenter={() => details2 = true} on:mouseleave={() => details2=false}>programming.</summary>
-          <p class="p-intro">
+          <p class="p-intro" >
           I mainly use Javascript (React or Svelte), NodeJS (Express) and MongoDB. <a href="#skills" class="a-cta"><i class="fas fa-glasses"></i></a>
           </p>
         </details>
@@ -148,6 +148,13 @@ function handleWindowScrollable() {
             projectName="Mockup to Website"
             projectDescription="Build a HTML/CSS-only page using only mockups"
             projectPng={"mockup"}
+          />
+          <ProjectCard
+            githubLink="https://github.com/Eikix/ohmyfood"
+            projectURL="https://eikix.github.io/ohmyfood/"
+            projectName="Mockup to Mobile Website"
+            projectDescription="Build a HTML/CSS-only page using only mockups aimed at mobiles"
+            projectPng={"ohmyfood"}
           />
         </div>
       </div>
@@ -302,9 +309,7 @@ function handleWindowScrollable() {
     color: #F9F871;
   }
 
-  .intro-summary:hover + .p-intro {
-    opacity:1;
-  }
+  
 
   .intro-summary::marker {
     content: '';
@@ -312,17 +317,17 @@ function handleWindowScrollable() {
 
   .p-intro {
     text-shadow: 1px 1px 1px #0A4653;
+    box-shadow: 1px 1px 1px 0 #07353f ;
     font-size: var(--fs-f);
     position: absolute;
     top: 70%;
     left: -20%;
-    background: #002935;
+    background: #0A4653;
     border-radius: 1rem;
     padding: 0.7rem;
     min-width: 60vw;
     letter-spacing: 1px;
-    opacity: 0;
-    transition: opacity 200ms ease-in-out;
+    
 
   }
 
