@@ -66,6 +66,7 @@
         gap: 0.1em;
         align-items: center;
         cursor: pointer;
+        color:inherit;
     }
 
     /* .skill-display:hover,
@@ -81,11 +82,11 @@
         top: -20%;
         min-width: 100%;
         height: auto;
-        min-height: 90%;
+        min-height: 80%;
         z-index: 99;
         padding: 0.9em;
         border-radius: min(3em, 20%);
-        background: var(--dark-purple-gradient);
+        background: #0A4653;
         font-size: var(--fs-modal, 1em);
         transform: scale(1);
         transition: transform 200ms;
@@ -106,6 +107,7 @@
 
     .skill-name {
         font-size: 1em;
+        color: inherit;
     }
 
 </style>

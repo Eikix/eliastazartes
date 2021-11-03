@@ -10,6 +10,9 @@
   let projectsBox;
   let coordX = 0;
 
+  let details1 = false;
+  let details2 = false;
+
   function handleScroll(event) {
    coordX += event.deltaY;
    projectsBox.scroll({
@@ -69,17 +72,19 @@ function handleWindowScrollable() {
   <main class="z-ind">
     <section class="grid-landing">
       <h2 class="hi grid-hi">Hi, I'm <span class="elias">Elias</span>,</h2>
-      <h2 class="hi grid-hi-2">I do freelance programming.</h2>
-      <div class="grid-intro">
-        <p class="p-intro">
-          I'm a {myBday} year-old freelancer based in Paris. I mainly do fullstack web development. <a href="#skills" class="a-cta"><i class="fas fa-hammer"></i></a>
-        </p>
-      </div>
-      <div class="grid-second-intro">
-        <p class="p-intro">
+      <h3 class="hi grid-hi-2">I do
+        <details class="inline-details" open={details1}>
+          <summary class="intro-summary" on:mouseenter={() => details1 = true} on:mouseleave={() => details1=false}>freelance</summary>
+          <p class="p-intro">
+            I'm a {myBday} year-old freelancer based in Paris. I do fullstack web development. <a href="#skills" class="a-cta"><i class="fas fa-hammer"></i></a>
+          </p>
+        </details>
+        <details class="inline-details" open={details2}>
+          <summary class="intro-summary" on:mouseenter={() => details2 = true} on:mouseleave={() => details2=false}>programming.</summary>
+          <p class="p-intro">
           I mainly use Javascript (React or Svelte), NodeJS (Express) and MongoDB. <a href="#skills" class="a-cta"><i class="fas fa-glasses"></i></a>
-        </p>
-      </div>
+          </p>
+        </details>
     </section>
 
     <section id="skills" class="grid-skills relative">
@@ -163,12 +168,12 @@ function handleWindowScrollable() {
     --color-secondary: hsl(0, 0%, 88%);
     --fs-big: 1.3em;
     --fs-p: 1em;
-    --fs-f: 0.5em;
+    --fs-f: 0.8rem;
     --fs-description: 0.8em;
     --fs-modal: 0.5em;
 
-    --yellow-gradient: linear-gradient(0.1turn, rgb(59, 59, 59), rgb(126, 134, 68) );
-    --dark-purple-gradient: linear-gradient(0.4turn, rgb(23, 3, 32), rgb(29, 17, 34) , rgb(33, 5, 47));
+    --yellow-gradient:  linear-gradient(to right top, #f1f1e6, #f4f3e2, #f7f4de, #fbf6da, #fff7d6);
+    --dark-purple-gradient: linear-gradient(to left bottom, #00323e, #063945, #0d404d, #144854, #1b4f5c, #1b4e5b, #1b4d5a, #1b4c59, #144350, #0d3a47, #05313e, #002935);
   }
 
   /* :global(canvas) {
@@ -206,6 +211,7 @@ function handleWindowScrollable() {
 
   main {
     display: grid;
+    width: 100%;
     grid-template-columns: repeat(12, 1fr);
     grid-column: 1/13;
   }
@@ -224,11 +230,12 @@ function handleWindowScrollable() {
   }
 
   .elias {
-    color: rgb(226, 215, 115);
+    color: #F99137;
   }
 
   .grid-landing {
     display: grid;
+    width: 100%;
     grid-template-columns: repeat(12, 1fr);
     grid-column: 1/13;
   }
@@ -276,23 +283,47 @@ function handleWindowScrollable() {
     text-align: left;
     grid-row: 2 / 3;
     grid-column: 2 / 11;
+    font-size: var(--fs-p);
   }
 
-  .grid-intro {
-    z-index: inherit;
-    grid-row: 3 / 4;
-    grid-column: 8 / 12;
+  .inline-details {
+    display: inline-block;
+    position: relative;
   }
 
-  .grid-second-intro {
-    z-index: inherit;
-    grid-row: 4 / 5;
-    grid-column: 2 / 6;
+  .intro-summary {
+    cursor: pointer;
+    transform: scale(1);
+    transition: transform 200ms ease-in-out;
+  }
+
+  .intro-summary:hover {
+    transform: scale(1.1);
+    color: #F9F871;
+  }
+
+  .intro-summary:hover + .p-intro {
+    opacity:1;
+  }
+
+  .intro-summary::marker {
+    content: '';
   }
 
   .p-intro {
-    text-shadow: 
-      0.025em 0.025em 0.005em rgb(31, 0, 98),
+    text-shadow: 1px 1px 1px #0A4653;
+    font-size: var(--fs-f);
+    position: absolute;
+    top: 70%;
+    left: -20%;
+    background: #002935;
+    border-radius: 1rem;
+    padding: 0.7rem;
+    min-width: 60vw;
+    letter-spacing: 1px;
+    opacity: 0;
+    transition: opacity 200ms ease-in-out;
+
   }
 
   .a-cta {
@@ -316,6 +347,7 @@ function handleWindowScrollable() {
   
   .skills-wrapper {
     padding: 2em 4em;
+    color: #f1f1e6;
   }
 
   .skills-wrapper::before {
@@ -332,6 +364,16 @@ function handleWindowScrollable() {
 
   .skills-wrapper:hover::before {
     transform: scale(1);
+  }
+
+  .skills-wrapper:hover .title-centered{
+    color: #002935;
+    font-weight: 700;
+  }
+
+  .skills-wrapper:hover {
+    color: #002935;
+    font-weight: 500;
   }
 
   .grid-projects {
@@ -399,6 +441,7 @@ function handleWindowScrollable() {
     align-items: center;
     align-content: center;
     flex-wrap: wrap;
+    color: inherit;
   }
 
   .projects-container {

@@ -27,10 +27,10 @@
         align-items: center;
         justify-content: center;
         min-width: max(15em, 80%);
-        background: linear-gradient(0.4turn, rgb(32, 4, 44), rgb(29, 17, 34) , rgb(44, 7, 63));
+        background:var( --dark-purple-gradient);
         border-radius: 20%;
         padding: 5%;
-        box-shadow: 0.1em 0.1em 0.3em rgb(32, 4, 44);
+        box-shadow: 0 0 1px rgb(0, 0, 0);
     }
 
     .project-title {
@@ -38,7 +38,7 @@
     }
     
     .project-title:hover{
-        color: pink;
+        color: #F99137;
     }
 
     .project-description {
